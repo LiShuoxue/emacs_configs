@@ -14,7 +14,7 @@
               ("C-p" . 'copilot-previous-completion))
   :config
   (add-to-list 'copilot-indentation-alist '(prog-mode 4))
-  (add-to-list 'copilot-indentation-alist '(org-mode 4))
+  (add-to-list 'copilot-indentation-alist '(org-mode 0))
   (add-to-list 'copilot-indentation-alist '(text-mode 4))
   (add-to-list 'copilot-indentation-alist '(closure-mode 4))
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 4))

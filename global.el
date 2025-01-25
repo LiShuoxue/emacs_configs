@@ -31,18 +31,19 @@
 
 
 (defun init_layout ()
-  (split-window-right)
-  (scale_buffer_width 0.20)
-  (find-file ".")
-  (other-window 1)
-  (select-window (split-window-below))
-  (scale_buffer_height 0.30)
-  (let(
-	(display-buffer-overriding-action '(display-buffer-same-window) )
-	)
-    (shell)
-    )
-  (select-window (previous-window))
+  (neotree)
+  ;(split-window-right)
+  ;(scale_buffer_width 0.20)
+  ;(find-file ".")
+  ;(other-window 1)
+;(select-window (split-window-below))
+;(scale_buffer_height 0.30)
+;(let(
+;	(display-buffer-overriding-action '(display-buffer-same-window) )
+;	)
+;  (shell)
+;  )
+;(select-window (previous-window))
   )
 
 

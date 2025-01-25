@@ -15,3 +15,12 @@
  'org-babel-load-languages
  '((python . t)))
 
+(org-link-set-parameters
+ "function-help"
+ :follow (lambda (func-name)
+           "Jump to the help page of a function."
+           (describe-function (intern func-name)))
+ :export (lambda (func-name description format)
+           (cond ((eq format 'html) (format "<a href=\"%s\">%s</a>" func-name (or description func-name)))
+                 ((eq format 'latex) (format "\\href{%s}{%s}" func-name (or description func-name))))))
+
