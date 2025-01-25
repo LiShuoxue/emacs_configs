@@ -12,9 +12,10 @@
               ("C-<tab>" . 'copilot-accept-completion-by-word)
               ("C-n" . 'copilot-next-completion)
               ("C-p" . 'copilot-previous-completion))
-  ;:map copilot-completion-map
-  ;("<tab>" . copilot-accept-completion)
-  ; :map copilot-completion-map
-	; ("<tab>" . 'copilot-accept-completion)
-  
-	)
+  :config
+  (add-to-list 'copilot-indentation-alist '(prog-mode 4))
+  (add-to-list 'copilot-indentation-alist '(org-mode 4))
+  (add-to-list 'copilot-indentation-alist '(text-mode 4))
+  (add-to-list 'copilot-indentation-alist '(closure-mode 4))
+  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 4))
+)
