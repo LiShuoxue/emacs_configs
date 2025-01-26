@@ -1,6 +1,7 @@
 ;; Customization for org-mode in emacs
 
 
+
 (defun my/org-refresh-inline-images ()
   "Refresh inline images in the current Org buffer."
   (when (derived-mode-p 'org-mode)
