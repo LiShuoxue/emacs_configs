@@ -1,0 +1,54 @@
+
+#+TITLE: Emacs key-binding cheating-sheet
+#+author : Shuoxue Li
+
+* Common Emacs key-bindings
+# function-help
+
+| KeyBind | Description                       | Notes        |
+|---------+-----------------------------------+--------------|
+| [[function-help:open_init_config][C-c i]]   | get personal emacs configuration  | personal def |
+|         |                                   |              |
+| [[function-help:kill-ring-save][M-w]]     | copy                              |              |
+| [[function-help:kill-region][C-w]]     | cut                               |              |
+| [[function-help:yank][C-y]]     | paste                             |              |
+|         |                                   |              |
+| [[function-help:bookmark-set][C-x r m]] | set a bookmark                    |              |
+| C-x r b | open a bookmark                   |              |
+| C-x r k | kill a rectangle                  |              |
+| C-x r t | substitute rect region with texts |              |
+| C-x u   | undo                              |              |
+
+
+* Elpy
+| Key-bind  | Description      |
+|-----------+------------------|
+| C-c @ C-c | Fold code blocks |
+|           |                  |
+
+* Org-mode
+** table
+| Key-bind | Description |
+|----------+-------------|
+| <TAB>    | Autofill    |
+|          |             |
+|          |             |
+|          |             |
+
+* Magit
+[[function-help:magit-status][C-x g]] to open Magit. Within the interface,
+
+| Key-bind         | Description                   | Notes |
+|------------------+-------------------------------+-------|
+| p                | scroll up                     |       |
+| n                | scroll down                   |       |
+| h                | open help menu                |       |
+| g                | refresh                       |       |
+| s                | stage changes                 |       |
+| u                | unstage changes               |       |
+| k                | discard changes               |       |
+| m                | remote                        |       |
+| d                | difference                    |       |
+| <TAB>            | Open the folder / differences |       |
+| c c text C-c C-c | git commit -m "text"          |       |
+| P p              | git push                      |       |
