@@ -1,12 +1,21 @@
 ;; INSTALL PACKAGES
 ;; --------------------------------------
-(require 'package)
-(add-to-list 'package-archives
-             '("elpy" . "http://jorgenschaefer.github.io/packages/"))   
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/") t)
-;(add-to-list 'package-archives
-             ;'("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+(condition-case nil
+    (progn
+      (require 'package)
+      (setq package-archives '(
+			       ("elpy" . "http://jorgenschaefer.github.io/packages/")
+			       ("melpa" . "https://melpa.org/packages/")
+                               ("gnu" . "https://elpa.gnu.org/packages/")
+			       ("elpy" . "http://jorgenschaefer.github.io/packages/")
+			   )
+	    ))
+      (package-initialize))
+  (message "Failed to initialize all the package systems.")
+
+
+
 (add-to-list 'package-archives
 	     '("gnu" . "http://elpa.gnu.org/packages/"))
 ;; activate all packages
@@ -19,14 +28,13 @@
 ;; define list of packages to install
 (defvar myPackages
   '(better-defaults
-    dracula-theme
     elpy
     ein
     pyenv-mode
     slurm-mode
     magit
     neotree
-    nerd-icons
+    ;nerd-icons
 ))
 
 ;; install all packages in list
@@ -34,24 +42,6 @@
       (unless (package-installed-p package)
       (package-install package)))
       myPackages)
-
-;; Use shell's $PATH
-; (exec-path-from-shell-copy-env "PATH")
-
-;; init.el ends here
-;(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- ;'(package-selected-packages
-  ; '(## copilot jsonrpc json-rpc editorconfig night-owl-theme ein dracula-theme pyenv-mode elpy exec-path-from-shell material-theme better-defaults)))
-;(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-;)
 
 (elpy-enable)
 
@@ -68,3 +58,8 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
+
+
+;; Use shell's $PATH
+; (exec-path-from-shell-copy-env "PATH")
+

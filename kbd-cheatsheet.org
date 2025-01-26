@@ -21,10 +21,12 @@
 
 
 * Elpy
-| Key-bind  | Description      |
-|-----------+------------------|
-| C-c @ C-c | Fold code blocks |
-|           |                  |
+| Key-bind  | Description       |
+|-----------+-------------------|
+| C-c @ C-c | Fold code blocks  |
+| C-c C-o   | List of functions |
+| M-.       | go to definition  |
+|           |                   |
 
 * Org-mode
 ** table

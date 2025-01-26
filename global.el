@@ -56,3 +56,6 @@
 (delete-selection-mode t)                    ; Replace selection when typing
 (setq inhibit-startup-message t)          ; Hide the startup message
 (setq make-backup-files nil)
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs_configs/themes/")
+(load-theme 'haki t)
