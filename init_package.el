@@ -24,6 +24,9 @@
     ein
     pyenv-mode
     slurm-mode
+    magit
+    neotree
+    nerd-icons
 ))
 
 ;; install all packages in list
