@@ -14,16 +14,18 @@
       (package-initialize))
   (message "Failed to initialize all the package systems.")
 
-
-
 (add-to-list 'package-archives
-	     '("gnu" . "http://elpa.gnu.org/packages/"))
+         '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+	 '("gnu" . "https://elpa.gnu.org/packages/"))
+
 ;; activate all packages
 (package-initialize)
 
 ;; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
+
 
 ;; define list of packages to install
 (defvar myPackages
@@ -34,6 +36,9 @@
     slurm-mode
     magit
     neotree
+    vterm
+    json-mode
+    toml-mode
     ;nerd-icons
 ))
 
@@ -58,8 +63,4 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
-
-
-;; Use shell's $PATH
-; (exec-path-from-shell-copy-env "PATH")
 

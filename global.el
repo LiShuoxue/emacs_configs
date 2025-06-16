@@ -37,6 +37,9 @@
 
 (global-set-key (kbd "C-c i") 'open_init_config)
 (global-set-key (kbd "C-z") 'confirm-suspend-frame) ; Confirm before suspending Emacs
+(global-set-key (kbd "C-c d") 'flymake-show-buffer-diagnostics)
+(global-set-key (kbd "C-c v") 'vterm)
+
 (setq confirm-kill-emacs #'yes-or-no-p)             ; Confirm before exiting Emacs
 (setq inhibit-startup-message t)   ;; hide the startup message
 (setq neo-smart-open t)
@@ -58,4 +61,12 @@
 (setq make-backup-files nil)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs_configs/themes/")
-(load-theme 'haki t)
+(load-theme 'oriole t)
+
+(global-tree-sitter-mode)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+;; require true color used in emacs
+(setq term-terminal-parameter '(:color-mode . true))
+
+(require 'org-tempo)

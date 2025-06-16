@@ -1,13 +1,28 @@
 
+
 #+TITLE: Emacs key-binding cheating-sheet
 #+author : Shuoxue Li
 
-* Common Emacs key-bindings
-# function-help
+* TODO [#C] Common Emacs key-bindings
+
+** Second title
+
+*** Third title
+
+Here is some documentations.
+
+**** Fourth title
+
+***** TODO [#C] Fifth title
+
+*** Another third title
+
+****** DONE [#A] Sixth table
 
 | KeyBind | Description                       | Notes        |
 |---------+-----------------------------------+--------------|
 | [[function-help:open_init_config][C-c i]]   | get personal emacs configuration  | personal def |
+| [[function-help:flymake-show-buffer-diagnostics][C-c d]]   | show all err/warnings of code     | personal def |
 |         |                                   |              |
 | [[function-help:kill-ring-save][M-w]]     | copy                              |              |
 | [[function-help:kill-region][C-w]]     | cut                               |              |
@@ -18,6 +33,11 @@
 | C-x r k | kill a rectangle                  |              |
 | C-x r t | substitute rect region with texts |              |
 | C-x u   | undo                              |              |
+| C-x +   | Balance the widths of windows     |              |
+|         |                                   |              |
+| [[function-help:goto-line][M-g M-g]] | Jump to a input line number       |              |
+|         |                                   |              |
+
 
 
 * Elpy
@@ -28,14 +48,15 @@
 | M-.       | go to definition  |
 |           |                   |
 
+
 * Org-mode
 ** table
-| Key-bind | Description |
-|----------+-------------|
-| <TAB>    | Autofill    |
-|          |             |
-|          |             |
-|          |             |
+| Key-bind | Description           |
+|----------+-----------------------|
+| <TAB>    | Autofill              |
+| C-c C-p  | Jump to previous head |
+| C-c C-n  | Jump to next head     |
+|          |                       |
 
 * Magit
 [[function-help:magit-status][C-x g]] to open Magit. Within the interface,
@@ -54,3 +75,11 @@
 | <TAB>            | Open the folder / differences |       |
 | c c text C-c C-c | git commit -m "text"          |       |
 | P p              | git push                      |       |
+
+* Shell
+
+| Key-bind | Description    | Notes |
+|----------+----------------+-------|
+| C-c M-o  | clear          |       |
+| C-c M-r  | previous input |       |
+|          |                |       |
