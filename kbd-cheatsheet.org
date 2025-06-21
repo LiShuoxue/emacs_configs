@@ -1,6 +1,4 @@
-
-
-#+TITLE: Emacs key-binding cheating-sheet
+1#+TITLE: Emacs key-binding cheating-sheet
 #+author : Shuoxue Li
 
 * TODO [#C] Common Emacs key-bindings
@@ -13,16 +11,28 @@ Here is some documentations.
 
 **** Fourth title
 
-***** TODO [#C] Fifth title
+***** DONE [#C] Fifth title
 
 *** Another third title
 
-****** DONE [#A] Sixth table
+****** TODO [#A] Sixth table
+
+** Emacs Client
+
+1. Start an emacs server by ~emacs --daemon~
+2. Then execute ~emacsclient path-to-your-folder~ to immediately open the emacs.
+3. Open vterm in the emacsclient and salloc the interactive task, which cannot be killed if we exit the emacsclient, the same principle as tmux
+4. If we accidentally suspend emacsclient, we cannot fetch it by `emacsclient`, instead, use `fg` (job foreground command) to reopen the suspended emacsclient job.
+5. If we quit the emacsclient by ~C-x C-c~, then after we reopen it, all the buffers exist, but the layout of buffers is *NOT* saved. Instead, we can suspend with ~C-c C-z~, and use fg to restore it.
+
 
 | KeyBind | Description                       | Notes        |
 |---------+-----------------------------------+--------------|
 | [[function-help:open_init_config][C-c i]]   | get personal emacs configuration  | personal def |
 | [[function-help:flymake-show-buffer-diagnostics][C-c d]]   | show all err/warnings of code     | personal def |
+| C-c g   | open magit                        | personal def |
+| C-c v   | open vterm                        | personal def |
+| C-c t   | load theme                        | personal def |
 |         |                                   |              |
 | [[function-help:kill-ring-save][M-w]]     | copy                              |              |
 | [[function-help:kill-region][C-w]]     | cut                               |              |
@@ -35,8 +45,10 @@ Here is some documentations.
 | C-x u   | undo                              |              |
 | C-x +   | Balance the widths of windows     |              |
 |         |                                   |              |
-| [[function-help:goto-line][M-g M-g]] | Jump to a input line number       |              |
+| [[function-help:goto-line][M-g g]]   | Jump to a input line number       |              |
 |         |                                   |              |
+| C-h m   | See what modes used in the buffer |              |
+| C-h k   | See the function of a key-bind    |              |
 
 
 
@@ -47,7 +59,6 @@ Here is some documentations.
 | C-c C-o   | List of functions |
 | M-.       | go to definition  |
 |           |                   |
-
 
 * Org-mode
 ** table

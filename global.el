@@ -35,19 +35,19 @@
   )
 
 
-(global-set-key (kbd "C-c i") 'open_init_config)
 (global-set-key (kbd "C-z") 'confirm-suspend-frame) ; Confirm before suspending Emacs
+(global-set-key (kbd "C-c i") 'open_init_config)
 (global-set-key (kbd "C-c d") 'flymake-show-buffer-diagnostics)
-(global-set-key (kbd "C-c v") 'vterm)
+(global-set-key (kbd "C-c g") 'magit-status)
+(global-set-key (kbd "C-c t") 'load-theme)
+(global-set-key (kbd "C-c v") 'multi-vterm) ; Open multi-vterm
 
 (setq confirm-kill-emacs #'yes-or-no-p)             ; Confirm before exiting Emacs
 (setq inhibit-startup-message t)   ;; hide the startup message
 (setq neo-smart-open t)
 
 ;; enable line numbers globally
-(if (>= emacs-major-version 29)
-    (global-display-line-numbers-mode t)
-  (global-linum-mode t))
+(if (>= emacs-major-version 29) (global-display-line-numbers-mode t) (global-linum-mode t))
 
 (setq linum-format "%5d\s\s")  ;; format line number spacing
 
@@ -66,7 +66,28 @@
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
+;; Disable hl-todo, use customized label instead.
+;; (add-hook 'python-mode-hook #'hl-todo-mode)
+
 ;; require true color used in emacs
 (setq term-terminal-parameter '(:color-mode . true))
 
+;; Save the current layout 
+(desktop-save-mode 1)
+
 (require 'org-tempo)
+
+
+(defconst +session-dir+ (expand-file-name "~/.emacs.d/session/"))
+
+(require 'desktop)
+(setq desktop-save t desktop-load-locked-desktop t desktop-path `(,+session-dir+) desktop-dirname +session-dir+ desktop-base-file-name ".desktop" desktop-base-lock-name ".desktop.lock") (desktop-save-mode t)
+
+;; save history between sessions
+(require 'savehist)
+(setq history-length 100 savehist-file (concat +session-dir+ ".history")) (savehist-mode t)
+
+;; save point between file visits
+(require 'saveplace)
+(setq save-place-limit 100 save-place-file (concat +session-dir+ ".point")) (setq-default save-place t)
+

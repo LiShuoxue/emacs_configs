@@ -35,7 +35,8 @@
     pyenv-mode
     slurm-mode
     magit
-    neotree
+    activities
+    ;; neotree
     vterm
     json-mode
     toml-mode
