@@ -60,15 +60,13 @@
 (setq inhibit-startup-message t)          ; Hide the startup message
 (setq make-backup-files nil)
 
+
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs_configs/themes/")
 (load-theme 'oriole t)
 
-(global-tree-sitter-mode)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 ;; Disable hl-todo, use customized label instead.
 ;; (add-hook 'python-mode-hook #'hl-todo-mode)
-
 ;; require true color used in emacs
 (setq term-terminal-parameter '(:color-mode . true))
 
