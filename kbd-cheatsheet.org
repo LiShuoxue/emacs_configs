@@ -29,9 +29,9 @@ Here is some documentations.
 | KeyBind | Description                       | Notes        |
 |---------+-----------------------------------+--------------|
 | [[function-help:open_init_config][C-c i]]   | get personal emacs configuration  | personal def |
-| [[function-help:flymake-show-buffer-diagnostics][C-c d]]   | show all err/warnings of code     | personal def |
+| [[function-help:flymake-show-buffer-diagnostics][C-c f]]   | show all err/warnings of code     | personal def |
 | C-c g   | open magit                        | personal def |
-| C-c v   | open vterm                        | personal def |
+| C-c b   | open vterm                        | personal def |
 | C-c t   | load theme                        | personal def |
 |         |                                   |              |
 | [[function-help:kill-ring-save][M-w]]     | copy                              |              |

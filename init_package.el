@@ -32,6 +32,7 @@
   '(better-defaults
     elpy
     ein
+    python-pytest
     pyenv-mode
     slurm-mode
     magit

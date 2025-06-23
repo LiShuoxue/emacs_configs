@@ -37,10 +37,11 @@
 
 (global-set-key (kbd "C-z") 'confirm-suspend-frame) ; Confirm before suspending Emacs
 (global-set-key (kbd "C-c i") 'open_init_config)
-(global-set-key (kbd "C-c d") 'flymake-show-buffer-diagnostics)
+(global-set-key (kbd "C-c f") 'flymake-show-buffer-diagnostics)
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c t") 'load-theme)
 (global-set-key (kbd "C-c v") 'multi-vterm) ; Open multi-vterm
+(global-set-key (kbd "C-c p f") 'python-pytest-file)
 
 (setq confirm-kill-emacs #'yes-or-no-p)             ; Confirm before exiting Emacs
 (setq inhibit-startup-message t)   ;; hide the startup message
@@ -64,10 +65,6 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/emacs_configs/themes/")
 (load-theme 'oriole t)
 
-
-;; Disable hl-todo, use customized label instead.
-;; (add-hook 'python-mode-hook #'hl-todo-mode)
-;; require true color used in emacs
 (setq term-terminal-parameter '(:color-mode . true))
 
 ;; Save the current layout 
@@ -75,17 +72,18 @@
 
 (require 'org-tempo)
 
+;; (defconst +session-dir+ (expand-file-name "~/.emacs.d/session/"))
 
-(defconst +session-dir+ (expand-file-name "~/.emacs.d/session/"))
-
-(require 'desktop)
-(setq desktop-save t desktop-load-locked-desktop t desktop-path `(,+session-dir+) desktop-dirname +session-dir+ desktop-base-file-name ".desktop" desktop-base-lock-name ".desktop.lock") (desktop-save-mode t)
+;; (require 'desktop)
+;; (setq desktop-save t desktop-load-locked-desktop t desktop-path `(,+session-dir+) desktop-dirname +session-dir+ desktop-base-file-name ".desktop" desktop-base-lock-name ".desktop.lock") (desktop-save-mode t)
 
 ;; save history between sessions
-(require 'savehist)
-(setq history-length 100 savehist-file (concat +session-dir+ ".history")) (savehist-mode t)
+;; (require 'savehist)
+;; (setq history-length 100 savehist-file (concat +session-dir+ ".history")) (savehist-mode t)
 
 ;; save point between file visits
-(require 'saveplace)
-(setq save-place-limit 100 save-place-file (concat +session-dir+ ".point")) (setq-default save-place t)
-
+;; (require 'saveplace)
+;; (setq save-place-limit 100 save-place-file (concat +session-dir+ ".point")) (setq-default save-place t)
+; (require 'treesit)
+; (treesit-available-p)  ;; t
+; (setq treesit-extra-load-path '("/home/sli7/myenv/lib"))
