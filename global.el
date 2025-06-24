@@ -40,7 +40,7 @@
 (global-set-key (kbd "C-c f") 'flymake-show-buffer-diagnostics)
 (global-set-key (kbd "C-c g") 'magit-status)
 (global-set-key (kbd "C-c t") 'load-theme)
-(global-set-key (kbd "C-c v") 'multi-vterm) ; Open multi-vterm
+(global-set-key (kbd "C-c v") 'multi-term) ; Open multi-term
 (global-set-key (kbd "C-c p f") 'python-pytest-file)
 
 (setq confirm-kill-emacs #'yes-or-no-p)             ; Confirm before exiting Emacs
